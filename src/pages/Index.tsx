@@ -108,7 +108,7 @@ const Index = () => {
               </button>
             ))}
           </nav>
-          <Button onClick={() => scrollTo('contacts')} className="hidden lg:inline-flex rounded-full font-semibold">
+          <Button onClick={() => scrollTo('contacts')} className="hidden lg:inline-flex rounded-lg font-semibold">
             Получить аудит
           </Button>
           <button className="lg:hidden" onClick={() => setMenuOpen((v) => !v)}>
@@ -122,7 +122,7 @@ const Index = () => {
                 {n.label}
               </button>
             ))}
-            <Button onClick={() => scrollTo('contacts')} className="rounded-full mt-2">Получить аудит</Button>
+            <Button onClick={() => scrollTo('contacts')} className="rounded-lg mt-2">Получить аудит</Button>
           </div>
         )}
       </header>
@@ -134,12 +134,12 @@ const Index = () => {
           style={{ backgroundImage: `url(${HERO_IMG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
-        <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-primary/20 blur-3xl animate-pulse-glow" />
-        <div className="absolute top-40 -right-20 w-96 h-96 rounded-full bg-secondary/20 blur-3xl animate-pulse-glow" />
+        <div className="absolute -top-20 -left-20 w-96 h-96 rounded-lg bg-primary/20 blur-3xl animate-pulse-glow" />
+        <div className="absolute top-40 -right-20 w-96 h-96 rounded-lg bg-secondary/20 blur-3xl animate-pulse-glow" />
 
         <div className="container relative">
           <div className={`max-w-4xl ${reveal}`}>
-            <span className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-sm text-primary mb-7">
+            <span className="inline-flex items-center gap-2 glass rounded-lg px-4 py-1.5 text-sm text-primary mb-7">
               <Icon name="Activity" size={16} /> Система управляемой загрузки клиники
             </span>
             <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
@@ -149,10 +149,10 @@ const Index = () => {
               Не просто приводим заявки. Выстраиваем систему, которая превращает рекламу в прогнозируемый поток пациентов и рост выручки с каждого кресла.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
-              <Button onClick={() => scrollTo('contacts')} size="lg" className="rounded-full text-base font-semibold glow h-14 px-8">
+              <Button onClick={() => scrollTo('contacts')} size="lg" className="rounded-lg text-base font-semibold glow h-14 px-8">
                 Получить план загрузки на 90 дней
               </Button>
-              <Button onClick={() => scrollTo('how')} size="lg" variant="outline" className="rounded-full text-base border-primary/30 hover:bg-primary/10 px-8">
+              <Button onClick={() => scrollTo('how')} size="lg" variant="outline" className="rounded-lg text-base border-primary/30 hover:bg-primary/10 px-8">
                 Как работает система
               </Button>
             </div>
@@ -286,13 +286,13 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {CASES.map((c) => (
               <div key={c.city} className="glass rounded-3xl p-8 hover:-translate-y-1.5 transition-transform duration-300 relative overflow-hidden">
-                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-primary/10 blur-2xl" />
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-lg bg-primary/10 blur-2xl" />
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                   <Icon name="MapPin" size={16} className="text-primary" /> {c.city} · {c.type}
                 </div>
                 <div className="font-display font-black text-5xl text-gradient">{c.metric}</div>
                 <p className="mt-3 text-muted-foreground">{c.desc}</p>
-                <div className="mt-5 inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-sm text-primary">
+                <div className="mt-5 inline-flex items-center gap-2 glass rounded-lg px-3 py-1 text-sm text-primary">
                   <Icon name="CheckCircle2" size={15} /> {c.extra}
                 </div>
               </div>
@@ -338,8 +338,8 @@ const Index = () => {
       <section id="contacts" className="py-24 relative">
         <div className="container">
           <div className="glass rounded-[2.5rem] p-8 sm:p-14 relative overflow-hidden glow max-w-5xl mx-auto">
-            <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-secondary/20 blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute -top-24 -right-24 w-80 h-80 rounded-lg bg-secondary/20 blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-lg bg-primary/20 blur-3xl" />
             <div className="relative grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="font-display font-extrabold text-3xl sm:text-5xl leading-tight">
