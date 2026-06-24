@@ -3,37 +3,25 @@ import Icon from '@/components/ui/icon';
 
 const CASES = [
   {
-    city: 'Москва',
-    type: 'Имплантология',
-    metric: '+214%',
-    metricLabel: 'рост записей на имплантацию',
+    city: 'Москва', type: 'Имплантология', metric: '+214%', metricLabel: 'рост записей на имплантацию',
     problem: 'Клиника тратила 180 000 ₽/мес на рекламу, получала 8–12 первичек в месяц. Врачи простаивали.',
     solution: 'Перестроили воронку под высокомаржинальные направления, внедрили скрипты для администраторов.',
     result: 'За 3 месяца: 37 первичек на имплантацию, загрузка кресел 92%, выручка +3.1 млн ₽.',
-    extra: 'Загрузка 92%',
-    period: '3 месяца',
+    extra: 'Загрузка 92%', period: '3 месяца',
   },
   {
-    city: 'Казань',
-    type: 'Сеть из 3 клиник',
-    metric: '×2,7',
-    metricLabel: 'рост выручки с кресла',
+    city: 'Казань', type: 'Сеть из 3 клиник', metric: '×2,7', metricLabel: 'рост выручки с кресла',
     problem: 'Сеть из 3 клиник не понимала, какая реклама работает. Бюджет сливался без контроля.',
     solution: 'Запустили сквозную аналитику, пересобрали рекламные кампании под каждую клинику отдельно.',
     result: 'CPL снижен на 38%, выручка с каждого кресла выросла в 2.7 раза. ROI рекламы — 470%.',
-    extra: 'CPL снижен на 38%',
-    period: '4 месяца',
+    extra: 'CPL снижен на 38%', period: '4 месяца',
   },
   {
-    city: 'Екатеринбург',
-    type: 'Ортодонтия',
-    metric: '+1.4 млн',
-    metricLabel: 'дополнительная выручка в месяц',
+    city: 'Екатеринбург', type: 'Ортодонтия', metric: '+1.4 млн', metricLabel: 'дополнительная выручка в месяц',
     problem: 'Стоматология специализировалась на ортодонтии, но большинство пациентов приходило на терапию.',
     solution: 'Создали отдельные посадочные под брекеты и элайнеры, настроили ретаргетинг на «думающих».',
     result: '120+ первичек на ортодонтию ежемесячно, +1.4 млн ₽ дополнительной выручки.',
-    extra: '120+ первичек',
-    period: '5 месяцев',
+    extra: '120+ первичек', period: '5 месяцев',
   },
 ];
 
@@ -55,17 +43,20 @@ const FAQ = [
   { q: 'Сколько стоят ваши услуги?', a: 'Стоимость зависит от клиники, города и задачи. Обсуждаем на аудите — после него вы получаете конкретный план и цифры.' },
 ];
 
+const SectionLabel = ({ text, color = 'text-primary' }: { text: string; color?: string }) => (
+  <span className={`${color} font-semibold text-sm uppercase tracking-widest`}>{text}</span>
+);
+
 const CasesSection = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [openCase, setOpenCase] = useState<number | null>(null);
 
   return (
     <>
-      {/* CASES */}
       <section id="cases" className="py-24 bg-muted/30 grid-bg">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Кейсы</span>
+            <SectionLabel text="Кейсы" />
             <h2 className="font-display font-extrabold text-3xl sm:text-5xl mt-3">Цифры, а не обещания</h2>
             <p className="mt-3 text-muted-foreground">Реальные результаты клиник, которые уже работают с системой.</p>
           </div>
@@ -78,28 +69,24 @@ const CasesSection = () => {
                   </div>
                   <div className="font-display font-black text-5xl text-gradient">{c.metric}</div>
                   <p className="font-semibold mt-1">{c.metricLabel}</p>
-
                   <button
                     onClick={() => setOpenCase(openCase === i ? null : i)}
                     className="mt-4 text-sm text-primary hover:underline flex items-center gap-1"
                   >
                     {openCase === i ? 'Скрыть историю' : 'Читать кейс →'}
                   </button>
-
                   {openCase === i && (
                     <div className="mt-4 space-y-3 text-sm border-t border-border pt-4">
-                      <div>
-                        <span className="font-semibold text-destructive">Проблема: </span>
-                        <span className="text-muted-foreground">{c.problem}</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-primary">Решение: </span>
-                        <span className="text-muted-foreground">{c.solution}</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold">Результат: </span>
-                        <span className="text-muted-foreground">{c.result}</span>
-                      </div>
+                      {[
+                        { label: 'Проблема', color: 'text-destructive', value: c.problem },
+                        { label: 'Решение', color: 'text-primary', value: c.solution },
+                        { label: 'Результат', color: '', value: c.result },
+                      ].map(({ label, color, value }) => (
+                        <div key={label}>
+                          <span className={`font-semibold ${color}`}>{label}: </span>
+                          <span className="text-muted-foreground">{value}</span>
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -117,17 +104,16 @@ const CasesSection = () => {
         </div>
       </section>
 
-      {/* SERVICES */}
       <section id="services" className="py-24">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-widest">Услуги</span>
+            <SectionLabel text="Услуги" color="text-secondary" />
             <h2 className="font-display font-extrabold text-3xl sm:text-5xl mt-3">Полный цикл под ключ</h2>
             <p className="mt-4 text-muted-foreground">Одно агентство — все задачи. Не нужно координировать 5 подрядчиков.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {SERVICES.map((s) => (
-              <div key={s.title} className="bg-white border border-border rounded-2xl p-7 hover:border-secondary/30 hover:shadow-md transition-all group">
+              <div key={s.title} className="bg-white border border-border rounded-2xl p-7 hover:border-secondary/30 hover:shadow-md transition-all">
                 <div className="grid place-items-center w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-primary text-white mb-5">
                   <Icon name={s.icon} size={22} />
                 </div>
@@ -139,11 +125,10 @@ const CasesSection = () => {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-24 bg-muted/30">
         <div className="container max-w-3xl">
           <div className="text-center mb-14">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Вопросы</span>
+            <SectionLabel text="Вопросы" />
             <h2 className="font-display font-extrabold text-3xl sm:text-5xl mt-3">Часто задают</h2>
           </div>
           <div className="space-y-3">
