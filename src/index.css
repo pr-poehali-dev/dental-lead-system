@@ -4,44 +4,44 @@
 
 @layer base {
   :root {
-    --background: 230 35% 5%;
-    --foreground: 200 20% 96%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 8%;
 
-    --card: 230 30% 8%;
-    --card-foreground: 200 20% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 8%;
 
-    --popover: 230 30% 8%;
-    --popover-foreground: 200 20% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 8%;
 
-    --primary: 174 84% 50%;
-    --primary-foreground: 230 35% 5%;
+    --primary: 174 80% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 265 80% 62%;
-    --secondary-foreground: 200 20% 98%;
+    --secondary: 265 75% 55%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 230 25% 14%;
-    --muted-foreground: 215 16% 60%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 12% 42%;
 
-    --accent: 265 80% 62%;
-    --accent-foreground: 200 20% 98%;
+    --accent: 265 75% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 55%;
-    --destructive-foreground: 200 20% 98%;
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 230 25% 16%;
-    --input: 230 25% 16%;
-    --ring: 174 84% 50%;
+    --border: 220 16% 90%;
+    --input: 220 16% 90%;
+    --ring: 174 80% 38%;
 
     --radius: 1rem;
 
-    --sidebar-background: 230 30% 8%;
-    --sidebar-foreground: 200 20% 96%;
-    --sidebar-primary: 174 84% 50%;
-    --sidebar-primary-foreground: 230 35% 5%;
-    --sidebar-accent: 230 25% 14%;
-    --sidebar-accent-foreground: 200 20% 96%;
-    --sidebar-border: 230 25% 16%;
-    --sidebar-ring: 174 84% 50%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 8%;
+    --sidebar-primary: 174 80% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 96%;
+    --sidebar-accent-foreground: 222 47% 8%;
+    --sidebar-border: 220 16% 90%;
+    --sidebar-ring: 174 80% 38%;
   }
 }
 
@@ -71,27 +71,27 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-cyan-300 to-secondary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-teal-500 to-secondary bg-clip-text text-transparent;
   }
 
   .glass {
-    background: hsla(230, 30%, 10%, 0.6);
+    background: hsla(0, 0%, 100%, 0.85);
     backdrop-filter: blur(16px);
-    border: 1px solid hsla(174, 84%, 50%, 0.12);
+    border: 1px solid hsl(220 16% 90%);
   }
 
   .glow {
-    box-shadow: 0 0 40px hsla(174, 84%, 50%, 0.25);
+    box-shadow: 0 16px 40px hsla(174, 80%, 38%, 0.22);
   }
 
   .glow-purple {
-    box-shadow: 0 0 50px hsla(265, 80%, 62%, 0.3);
+    box-shadow: 0 16px 40px hsla(265, 75%, 55%, 0.22);
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(hsla(174, 84%, 50%, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(174, 84%, 50%, 0.04) 1px, transparent 1px);
+      linear-gradient(hsla(222, 47%, 8%, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(222, 47%, 8%, 0.035) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 }
@@ -109,11 +109,11 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    opacity: 0.5;
+    opacity: 0.4;
     transform: scale(1);
   }
   50% {
-    opacity: 1;
+    opacity: 0.7;
     transform: scale(1.05);
   }
 }

@@ -221,7 +221,7 @@ const Index = () => {
       </section>
 
       {/* HOW / Как работает */}
-      <section id="how" className="py-24 relative grid-bg">
+      <section id="how" className="py-24 relative grid-bg bg-muted/40">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Механизм</span>
@@ -277,7 +277,7 @@ const Index = () => {
       </section>
 
       {/* CASES */}
-      <section id="cases" className="py-24 relative grid-bg">
+      <section id="cases" className="py-24 relative grid-bg bg-muted/40">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Кейсы</span>
