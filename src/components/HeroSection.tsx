@@ -138,11 +138,11 @@ const HeroSection = ({ menuOpen, setMenuOpen, scrollTo }: HeroSectionProps) => {
       {/* TRUST BAR */}
       <section className="border-y border-border bg-muted/30 py-5">
         <div className="container">
-          <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center sm:justify-between">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-3">
             {TRUST_ITEMS.map((t) => (
               <div key={t.text} className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Icon name={t.icon} size={16} className="text-primary shrink-0" />
-                {t.text}
+                <span>{t.text}</span>
               </div>
             ))}
           </div>
